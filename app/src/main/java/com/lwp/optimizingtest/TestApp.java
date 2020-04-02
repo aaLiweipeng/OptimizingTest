@@ -3,6 +3,8 @@ package com.lwp.optimizingtest;
 import android.app.Application;
 import android.os.StrictMode;
 
+import com.github.moduth.blockcanary.BlockCanary;
+import com.lwp.optimizingtest.block.AppBlockCanaryContext;
 import com.lwp.optimizingtest.memory.MemoryLeakActivity;
 
 /**
@@ -28,5 +30,7 @@ public class TestApp extends Application {
                 .penaltyLog()
                 .build());
 
+        //AndroidPerformanceMonitor测试
+        BlockCanary.install(this, new AppBlockCanaryContext()).start();
     }
 }

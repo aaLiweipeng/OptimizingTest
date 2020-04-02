@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.github.moduth.blockcanary.BlockCanary;
+import com.lwp.optimizingtest.block.AppBlockCanaryContext;
 import com.lwp.optimizingtest.memory.MemoryLeakActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +15,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //AndroidPerformanceMonitor测试
+        try {
+            Thread.currentThread().sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void go(View view) {

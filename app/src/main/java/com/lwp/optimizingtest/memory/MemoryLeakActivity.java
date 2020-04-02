@@ -32,7 +32,6 @@ public class MemoryLeakActivity extends AppCompatActivity implements CallBack{
         ImageView imageView = findViewById(R.id.iv_memoryleak);
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.splash);
         imageView.setImageBitmap(bitmap);
-
         CallBackManager.addCallBack(this);
 
         //磁盘读写检测 测试
